@@ -56,6 +56,7 @@
     <p>nof artists: <span class="dbgVal">{artists.length}</span></p>
     <p>selectedAlbum: <span class="dbgVal">{selectedAlbum}</span></p>
     <p>nof albums: <span class="dbgVal">{albums.length}</span></p>
+    <p>nof tracks: <span class="dbgVal">{tracks.length}</span></p>
 </div>
 <h2>Artists</h2>
 <div class="cardBox">
@@ -111,8 +112,8 @@
                         <tr>
                             <td>{track.name}</td>
                             <td>{formatDuration(track.milliseconds)}</td>
-                            <td>{track.mediaType}</td>
-                            <td>{track.genre}</td>
+                            <td>{track.mediatype.name}</td>
+                            <td>{track.genre.name}</td>
                         </tr>
                     {/each}
                 </tbody>

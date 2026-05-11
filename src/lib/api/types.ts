@@ -8,17 +8,6 @@ export interface Album {
     title: string;
 }
 
-export interface Track {
-    id: number;
-    name: string;
-    mediaType: string;
-    genre: string;
-    composer: string;
-    milliseconds: number;
-    bytes: number;
-    unitPrice: number;
-}
-
 export interface Genre {
     id: number;
     name: string;
@@ -28,3 +17,15 @@ export interface MediaType {
     id: number;
     name: string;
 }
+
+export interface Track {
+    id: number;
+    name: string;
+    mediatype: MediaType;
+    genre: Genre;
+    composer: string;
+    milliseconds: number;
+    bytes: number;
+    unitprice: number;
+}
+
