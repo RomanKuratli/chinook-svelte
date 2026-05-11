@@ -1,7 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
     import type { RestClient } from "../api/rest_client";
-  import { type Artist, type Album } from "$lib/api/types";
+  import { 
+    type Track, 
+    type Artist, 
+    type Album 
+} from "$lib/api/types";
 
   const ARTISTS_URL = "artists"
 
@@ -14,6 +18,7 @@
     let selectedArtist = $state<number | null>(null)
     let albums = $state<Album[]>([])
     let selectedAlbum = $state<number | null>(null)
+    let tracks = $state<Track[]>([])
 
     onMount(async () => {
         artists = await client.get<Artist[]>(ARTISTS_URL);
@@ -27,18 +32,23 @@
             return
         }
         albums = await client.get<Album[]>(`artists/${artistId}/albums`)
+        selectedAlbum = null
     }
 
     async function onSelectAlbum(albumId: number) {
         selectedAlbum = albumId
+        if (!albumId) {
+            tracks = []
+            return
+        }
+        tracks = await client.get<Track[]>(`albums/${albumId}/tracks`)
     }
 
-
-    
-
-
-
-
+    function formatDuration(ms: number): string {
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
 </script>
 
 <div class="dbg">
@@ -85,6 +95,29 @@
     </div>
     <div id="crdSelectTrack" class="card">
         <h3>Tracks</h3>
+        <hr />
+        <div class="scrollable-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Duration</th>
+                        <th>Media Type</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {#each tracks as track}
+                        <tr>
+                            <td>{track.name}</td>
+                            <td>{formatDuration(track.milliseconds)}</td>
+                            <td>{track.mediaType}</td>
+                            <td>{track.genre}</td>
+                        </tr>
+                    {/each}
+                </tbody>
+            </table>
+        </div>
         
     </div>
 </div>
