@@ -51,6 +51,7 @@
     }
 </script>
 
+<!--
 <div class="dbg">
     <p>selectedArtist: <span class="dbgVal">{selectedArtist}</span></p>
     <p>nof artists: <span class="dbgVal">{artists.length}</span></p>
@@ -58,6 +59,8 @@
     <p>nof albums: <span class="dbgVal">{albums.length}</span></p>
     <p>nof tracks: <span class="dbgVal">{tracks.length}</span></p>
 </div>
+-->
+
 <h2>Artists</h2>
 <div class="cardBox">
     <div id="crdSelectArtist" class="card">
@@ -132,7 +135,7 @@
         margin: 1rem;
         border-radius: 4px;
         border: 1px solid #ccc;
-        background: #1e1e1e; /* Passend zu deinem Dark Theme */
+        background: #1e1e1e;
         color: white;
         max-height: 50px;
         width: 200px;
@@ -141,17 +144,19 @@
     #crdSelectArtist {
         grid-column: 1;
         grid-row:1;
-        max-height: 400px; /* Begrenzt die Höhe */
+        max-height: 800px;
     }
 
     #crdSelectAlbum {
         grid-column: 2;
         grid-row:1;
+        max-height: 800px;
     }
 
     #crdSelectTrack {
         grid-column: 3;
         grid-row: 1;
+        max-height: 800px;
     }
 
     button {

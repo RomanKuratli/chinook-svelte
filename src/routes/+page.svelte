@@ -70,17 +70,59 @@ h1 {
 
 :global(.card) {
     width: 100%;
+    max-height: 800px;
     background-color: #1e293b;
     border-radius: 25px;
     padding-top: 1rem;
 }
 
-:global(.table) {
-    padding: 1rem;
+:global(ul) {
+    max-height: 600px;
+    overflow-y: auto;
 }
 
-:global(.tr) {
-    padding-top: 0.5rem;
+:global(table) {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+:global(thead) {
+    display: table;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #1e293b;
+    z-index: 10;
+}
+
+:global(tbody) {
+    display: block;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+:global(tbody tr) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+:global(tbody tr:nth-child(odd)) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+:global(tbody tr:nth-child(even)) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+:global(th, td) {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+:global(ul) {
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 :global(li) {
@@ -100,5 +142,44 @@ h1 {
     font-weight: 600;
     color: #ddaa77; /* Ein schönes Blau für den Text der aktiven Liste */
     border-left: 4px solid #304c74; /* Der "Indikator-Strich" */
+}
+
+:global(table) {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+:global(thead) {
+    display: table;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #1e293b;
+    z-index: 10;
+}
+
+:global(tbody) {
+    display: block;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+:global(tbody tr) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+:global(tbody tr:nth-child(odd)) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+:global(tbody tr:nth-child(even)) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+:global(th, td) {
+    padding: 0.5rem;
+    text-align: left;
 }
 </style>
