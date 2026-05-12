@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-    import type { RestClient } from "../api/rest_client";
+    import type { RestClient } from "$lib/api/rest_client";
   import { 
     type Track, 
     type Artist, 

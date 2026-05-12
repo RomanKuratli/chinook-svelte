@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { RestClient } from "./api/rest_client";
   import Artists from "./views/Artists.svelte";
+  import Employees from "./views/Employees.svelte";
 
 interface MainPanelProps {
     client: RestClient
@@ -17,7 +18,7 @@ const { client, selectedMenuItem }: MainPanelProps = $props()
         {:else if selectedMenuItem === "Customers"}
             <h2>Customers</h2>
         {:else if selectedMenuItem === "Employees"}
-            <h2>Employees</h2>
+            <Employees {client} />
         {/if}
     </div>
 </main>

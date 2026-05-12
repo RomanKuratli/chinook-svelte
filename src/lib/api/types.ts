@@ -29,3 +29,21 @@ export interface Track {
     unitprice: number;
 }
 
+export interface Employee {
+    id: number;
+    lastname: string;
+    firstname: string;
+    title: string;
+    reportsto: number | null;
+    birthdate: string;
+    hiredate: string;
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+    postalcode: string;
+    phone: string;
+    fax: string;
+    email: string;
+}
+
