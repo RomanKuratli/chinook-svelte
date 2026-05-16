@@ -4,7 +4,7 @@
     import { RestClient } from '$lib/api/rest_client'
     import MainPanel from '$lib/MainPanel.svelte'
 
-    const client = new RestClient("localhost", 8081)
+    const client = new RestClient("localhost", 8080)
     const menuItems = ["Artists", "Customers", "Employees"]
 
     let selectedMenuItem: string = $state<string>(menuItems[0])
