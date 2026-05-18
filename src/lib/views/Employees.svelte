@@ -74,6 +74,12 @@
     max-height: 100%;
 }
 
+#crdEmpDetails {
+    grid-column: auto;
+    grid-row: auto;
+    max-height: 100%;
+}
+
 button {
     all: unset; /* Entfernt Standard-Button-Styling */
     display: block;

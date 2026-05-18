@@ -64,8 +64,8 @@ h1 {
 :global(.cardBox) {
     padding: 1rem;
     margin: 1rem;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    gap: 1rem;
 }
 
 :global(.card) {

@@ -29,6 +29,41 @@ export interface Track {
     unitprice: number;
 }
 
+export interface Customer {
+    id: number;
+    firstname: string;
+    lastname: string;
+    company: string;
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+    postalcode: string;
+    phone: string;
+    fax: string;
+    email: string;
+}
+
+export interface Invoice {
+    id: number;
+    customer: Customer;
+    invoicedate: string;
+    billingaddress: string;
+    billingcity: string;
+    billingstate: string;
+    billingcountry: string;
+    billingpostalcode: string;
+    total: number;
+}
+
+export interface InvoiceLine {
+    id: number;
+    invoice: Invoice;
+    track: Track;
+    unitprice: number;
+    quantity: number;
+}
+
 export interface Employee {
     id: number;
     lastname: string;
